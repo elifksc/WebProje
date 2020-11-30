@@ -1,0 +1,26 @@
+bash komutları:
+
+	pwd -> bulunduğun dizini gösterir.
+	cd -> dizin değiştirir. (cd .. , cd filename)
+	ls -> bulunduğun dizindeki dosyaları listeler.
+	mkdir -> yeni dizin oluşturur. (mkdir newfilename)
+
+
+git komutları:
+
+
+	git init -> bulunduğumuz dizinde git kullanılacağını belirtir.
+	git add -> dosyaları git'e ekler. (add . tüm dosyaları ekler)
+	git commit -m "açıklama" -> eklediğimiz dosya veya değişikliklerigit veritabanına işler.
+	git branch -M main -> yeni bir branch oluşturur.
+	git remote add origin https://github.com/elifksc/WebProje.git ->github ile giti birleştirir.
+	git push -u origin main -> localdeki origin branch'ini remote'daki main branch'ine gönderir.
+	git restore filename -> dosyadaki değişiklikleri geri alır.(son commit)
+	git pull origin main ->remote dan kodları local ortama çeker, default(varsayılan) kendiliğinden merge(birleştirme) işlemini yapar.
+	git fetch  ->   remote daki kodların kopyasını local e oluşturur, ancak  merge yapmaz.
+	git logs -> değişikliklerin tarihçesini gösterir
+	git shows -> comit içerisinde yapılan değişiklikleri gösterir.
+	git status  -> dosyanın local tarafta modified(değişim) olduğunu gösterir.
+	git diff  -> dosyada hangi alanların değiştiğini gösterir.
+	git checkout — filename ->  ile yaptığınız değişikliği geriye alır.
+
