@@ -1,3 +1,3 @@
 import { temp } from './assets/js/vendors';
-import './main.scss';
+import './assets/sass/main.scss';
 console.log(temp)
