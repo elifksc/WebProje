@@ -3,6 +3,20 @@
     &__wrapper{
         display: flex;
     }
+    &__bir{
+            background: rgb(5, 5, 5);
+            display: inline-block;
+            position: absolute;
+            border-radius: 60%;
+            border: 3px solid #0d0d0e;
+            margin-left:45px ;
+            width: 13px;
+            height: 13px;
+            z-index: 400;
+            &-text{
+                margin-left: 33px;
+            }
+    }
     &__sidebar {
         max-width: 220px;
         .user-image {
@@ -14,13 +28,41 @@
                 width: 100%;
             }
         }
-        .menu {
-            &__item {
-                &-text {
-
+        .menu{ 
+            
+            list-style-type: none;
+            position: relative;
+            
+            &__item{
+                margin: 20px 0;
+                padding-left: 20px;
+                &-text{
+                    margin-left: 60px;
                 }
             }
 
+            &__item::before{
+                content: ' ';
+                background: white;
+                display: inline-block;
+                position: absolute;
+                border-radius: 60%;
+                border: 3px solid #0d0d0e;
+                left: 44px;
+                width: 13px;
+                height: 13px;
+                z-index: 400;
+            }
+        }
+        .menu::before{
+            content:' ';
+            background: #777676;
+            display: inline-block;
+            position: absolute;
+            left: 52px;
+            width: 3px;
+            height: 100%;
+            z-index: 400;
         }
     }
     &__content {
@@ -53,11 +95,25 @@
                 }
             }
             &__footer{
+                display: flex;
+                flex-direction: row;
+                margin:0 auto;
+                align-items: baseline;
                 .social-media {
-
+                    display: flex;
+                    background-color: white;  
+                    &--bir{
+                        background-color: gray;
+                        color: white;
+                        margin: 4px;
+                        padding: 5px;
+                         
+                    }
                 }
                 .signature {
-
+                    margin-left: 55%;
+                    padding-top: 50px;
+                   
                 } 
             }
         }
