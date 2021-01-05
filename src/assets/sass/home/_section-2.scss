@@ -1,19 +1,43 @@
 .section-2 {
     margin-top: -77px;
-    &__wrapper{
+    .user {
         display: flex;
-    }
-    &__sidebar {
-        max-width: 220px;
-        .user-image {
+        &__image {
             border-radius: 50%;
+            max-width: 120px;
             padding: 10px;
             overflow: hidden;
             background-color: #fff;
-            &__item {
+            margin-right: 10px;
+            &-item {
                 width: 100%;
             }
         } 
+        &__title {
+            font-size: 40px;
+            color: #fff;
+            padding-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            strong {
+                &:after {
+                    content: '';
+                }
+            }
+            &--small {
+                font-size: 18px;
+               
+            }
+        }
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    &__sidebar {
+        max-width: 220px;
+        display: none;
         .menu{ 
             &:before{
                 content:' ';
@@ -65,26 +89,8 @@
     }
     &__content {
         .content {
-            &__title {
-                font-size: 40px;
-                color: #fff;
-                padding-bottom: 35px;
-                display: flex;
-                align-items: center;
-                strong {
-                    &:after {
-                        content: '|';
-                        margin-left: 10px;
-                        margin-right: 10px;
-                    }
-                }
-                &--small {
-                    font-size: 18px;
-                   
-                }
-            }
+           
             &__section-title {
-                margin-top: 75px;
                 margin-bottom: 35px;
                 font-size: 60px;
                 color: #494f55;
@@ -109,6 +115,34 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        .user {
+            align-items: flex-start;
+            &__image {
+                max-width: 220px;
+            } 
+            &__title {
+                flex-direction: row;
+                align-items: center;
+                strong {
+                    &:after {
+                        content: '|';
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        &__sidebar {
+            display: block;
+        }
+        &__content {
+            .content {
+                margin-top: -75px;
             }
         }
     }
