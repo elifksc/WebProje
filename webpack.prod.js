@@ -9,6 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
+
 module.exports = merge(common, {
     mode: "production",
     entry: "./src/index.js",
@@ -27,6 +28,7 @@ module.exports = merge(common, {
                     collapseWhitespace: true,
                     removeComments: true,
                 }
+                
             }) 
         ]
     },
@@ -44,4 +46,5 @@ module.exports = merge(common, {
             },
         ]
     }
+
 })
