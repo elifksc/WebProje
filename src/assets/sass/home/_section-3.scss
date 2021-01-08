@@ -19,15 +19,13 @@
         &-title{
             font-size: 18px;
             color: $color-white;
-            padding-right: 100px;
-            padding-left: 100px;
             font-style: italic;
         }
         &-author{
            font-size: 14px;
            align-self: flex-end;
            margin-top: 10px;
-           color: #fff;
+           color: $color-white;
            strong {
                font-weight: bold;
            }
@@ -50,10 +48,12 @@
             color: $color-white;
             justify-content: space-between;
             width: 100%;
+            flex-direction: column;
             &__item{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                margin-bottom: 20px;
                 &-icon {
                     border-radius: 50%;
                     border: 1px solid grey;
@@ -82,12 +82,33 @@
         text-align:center;
         &-text {
             color: gray;
-            font-size: 30px;
+            font-size: 20px;
             &--underline {
                 color: $color-white;
                 text-decoration: underline;
             }
         }
        
+    }
+    @media screen and (min-width: 992px) {
+        &__header {
+            &-title {
+                padding-right: 100px;
+                padding-left: 100px;
+            }
+        }
+        &__skill {
+            .list {
+                flex-direction: row;
+                &__item {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__footer {
+            &-text {
+                font-size: 30px;
+            }
+        }
     }
 }
