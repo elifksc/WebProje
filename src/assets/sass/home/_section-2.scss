@@ -1,7 +1,7 @@
 .section-2 {
-    margin-top: -77px;
     .user {
         display: flex;
+        align-items: center;
         &__image {
             border-radius: 50%;
             max-width: 120px;
@@ -14,9 +14,8 @@
             }
         } 
         &__title {
-            font-size: 40px;
-            color: #fff;
-            padding-top: 20px;
+            font-size: 25px;
+            color: $color-black;
             display: flex;
             align-items: flex-start;
             flex-direction: column;
@@ -89,10 +88,9 @@
     }
     &__content {
         .content {
-           
             &__section-title {
-                margin-bottom: 35px;
-                font-size: 60px;
+                margin-bottom: 15px;
+                font-size: 30px;
                 color: #494f55;
                 &--bold {
                     font-weight: bold;
@@ -105,7 +103,8 @@
                 justify-content: space-between;
                 .social-media {
                     display: flex;
-                    background-color: white;  
+                    background-color: white;
+                    margin-right: 30px;
                     &__item{
                         background-color: gray;
                         color: white;
@@ -115,11 +114,19 @@
                         }
                     }
                 }
+                .signature {
+                    flex: 1;
+                    max-width: 250px;
+                    &__img {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
 
     @media screen and (min-width: 992px) {
+        margin-top: -77px;
         .user {
             align-items: flex-start;
             &__image {
@@ -128,6 +135,9 @@
             &__title {
                 flex-direction: row;
                 align-items: center;
+                color: $color-white;
+                padding-top: 20px;
+                font-size: 40px;
                 strong {
                     &:after {
                         content: '|';
@@ -143,6 +153,10 @@
         &__content {
             .content {
                 margin-top: -75px;
+                &__section-title {
+                    font-size: 60px;
+                    margin-bottom: 35px;
+                }
             }
         }
     }
