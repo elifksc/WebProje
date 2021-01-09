@@ -30,8 +30,8 @@ $(function() {
            }
          }
       ],
-       customPaging : function(slider, i) {
-         return '<li><button></button></li>';
+      customPaging : function(slider, i) {
+         return '<button></button>';
      },
    });
 });
