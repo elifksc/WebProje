@@ -100,6 +100,29 @@
           width: 0;
           height: 0;
         }
+        &:before, &:after {
+          content: none;
+        }
+        + li {
+          &:before {
+            content: none;
+          }
+        }
+      }
+      + li.slick-active {
+        &:after {
+          content: none;
+        }
+      }
+      &:first-child {
+        &:before {
+          content: none;
+        }
+      }
+      &:last-child {
+        &:after {
+          content: none;
+        }
       }
       // &:after{
       //   content: '';
