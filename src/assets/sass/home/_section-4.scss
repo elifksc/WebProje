@@ -1,6 +1,6 @@
 .section-4{
   padding-bottom: 40px;
-
+  background-image:url('~assets/img/Bg.png');
   &__body{
     position: absolute;  
     background-color: #393d41;
@@ -16,12 +16,17 @@
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
   }
+  &__slider {
+    &-item {
+      img {
+        display: inline !important;
+        padding: 6px;
+      }
+    }
+  }
   .wrapper{
     position: relative;
     text-align: center;
-    &-slide{
-      padding: 6px;
-    }
   }
   .slick-dots {
     display: flex;
@@ -31,20 +36,10 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    &:after{
-      content: '';
-      width: 100%;
-      height: 1px;
-      background-color: $color-white;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-    }
     li {
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
+      padding-right: 10px;
+      padding-left: 10px;
+      position: relative;
       button {
         border-radius: 50%;
         font-size: 0;
@@ -53,12 +48,69 @@
         width: 10px;
         background-color: transparent;
         border: 1px solid $color-white;
+        outline: none;
+      }
+      &:before, &:after {
+        content: '';
+        width: 10px;
+        height: 1px;
+        background-color: $color-white;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        transition: all 1s ease;
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
       }
       &.slick-active {
         button {
           background-color: $color-white;
+          transition: all 1s ease;
+
+        }
+        &:before, &:after {
+          width: 0;
+          height: 0;
+        }
+        + li {
+          &:before {
+            width: 0;
+            height: 0;
+          }
         }
       }
+      + li.slick-active {
+        &:after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &:first-child {
+        &:before {
+          width: 0;
+          height: 0;
+        }
+      }
+      &:last-child {
+        &:after {
+          width: 0;
+          height: 0;
+        }
+      }
+      // &:after{
+      //   content: '';
+      //   width: 100%;
+      //   height: 1px;
+      //   background-color: $color-white;
+      //   position: absolute;
+      //   transform: translate(-50%, -50%);
+      //   top: 50%;
+      //   left: 50%;
+      // }
     }
   }
 }
