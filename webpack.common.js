@@ -22,9 +22,13 @@ module.exports = {
             },
             {
                 test: /\.scss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'],
             },
         ]
     },
-    
+    resolve: {
+        alias: {
+            'assets': path.resolve(__dirname, 'src/assets')
+        }
+    },
 }

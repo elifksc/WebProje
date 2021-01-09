@@ -1,7 +1,6 @@
 .section-4{
   padding-bottom: 40px;
-
-  // background-image:url('./assets/img/Bg.png');
+  background-image:url('~assets/img/Bg.png');
   &__body{
     position: absolute;  
     background-color: #393d41;
@@ -59,7 +58,7 @@
         position: absolute;
         transform: translateY(-50%);
         top: 50%;
-        transition: all .3s ease;
+        transition: all 1s ease;
       }
       &:before {
         left: 0;
@@ -70,6 +69,36 @@
       &.slick-active {
         button {
           background-color: $color-white;
+          transition: all 1s ease;
+
+        }
+        &:before, &:after {
+          width: 0;
+          height: 0;
+        }
+        + li {
+          &:before {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+      + li.slick-active {
+        &:after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &:first-child {
+        &:before {
+          width: 0;
+          height: 0;
+        }
+      }
+      &:last-child {
+        &:after {
+          width: 0;
+          height: 0;
         }
         &:before, &:after {
           content: none;
