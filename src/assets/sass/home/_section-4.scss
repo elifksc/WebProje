@@ -61,10 +61,18 @@
         transition: all 1s ease;
       }
       &:before {
-        left: 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+        left: 1px;
+=======
+        left: 10px;
+>>>>>>> 341d4a2... commit amend
+=======
+        left: 1px;
+>>>>>>> d1a4a1b... amended comment
       }
       &:after {
-        right: 0;
+        right: 10px;
       }
       &.slick-active {
         button {
