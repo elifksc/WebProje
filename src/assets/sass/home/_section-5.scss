@@ -1,0 +1,132 @@
+.section-5{
+    
+    * {
+        box-sizing: border-box;
+      }
+      
+    &__head{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 30px;
+        color: #494f55;
+        font-family: "Helvetica";
+    }
+    &__nav{
+        height: 50px;
+        background-color: #eeeeee;
+        display: flex;
+        overflow: hidden;
+        &-months{
+            width: 50%;
+        }
+        &-years{
+            width: 50%;
+        }
+    }
+    &__timeline{
+        background: linear-gradient(#2e2b2e,#574a43,#897c75,#433731);
+        position: relative;
+        margin: 0 auto;
+        height: 610px;
+        overflow-y: auto;
+        padding: 50px 50px 0 50px;
+        &-content{
+            padding: 20px 30px;
+            background-color: black;
+            position: relative;
+            border-radius: 6px;
+
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            height: 1220px;
+        }
+    }
+    &__container{
+        padding: 10px 50px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: -30px;
+            background-color: $color-white;
+            border: 4px solid $color-white;
+            top: 45%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        left: 50%;
+    }
+    .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 50%;
+        width: 0;
+        z-index: 1;
+        right: 40px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 50%;
+        width: 0;
+        z-index: 1;
+        left: 40px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+      .right::after {
+        left: -30px;
+      }
+      .content {
+        background-color: white;
+        display: flex;
+        &__image{
+            height: 215px;
+        }
+        &__item{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            &-head{
+                margin-bottom: 20px;
+                font-size: 14px;
+                line-height: 18px;
+                color: #2c292b;
+                font-weight: bold;
+                font-family: "Helvetica";
+            }
+            &-body{
+                width: 200px;
+                height: 107px;
+                font-size: 12px;
+                line-height: 18px;
+                color: #2c292b;
+                font-family: "Helvetica";
+            }
+        }
+    }
+    
+}
