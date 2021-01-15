@@ -1,8 +1,8 @@
 .section-5{
-    
+    margin-bottom: 100px;
     * {
         box-sizing: border-box;
-      }
+    }
       
     &__head{
         text-align: center;
@@ -31,15 +31,8 @@
         height: 610px;
         overflow-y: auto;
         padding: 50px 50px 0 50px;
-        &-content{
-            padding: 20px 30px;
-            background-color: black;
-            position: relative;
-            border-radius: 6px;
-
-        }
         &:after{
-            content: '';
+            content: none;
             position: absolute;
             width: 2px;
             background-color: white;
@@ -48,85 +41,136 @@
             left: 50%;
             height: 1220px;
         }
-    }
-    &__container{
-        padding: 10px 50px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-        &:after{
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            right: -30px;
-            background-color: $color-white;
-            border: 4px solid $color-white;
-            top: 45%;
-            border-radius: 50%;
-            z-index: 1;
-        }
-    }
-    .left {
-        left: 0;
-    }
-    .right {
-        left: 50%;
-    }
-    .left::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 50%;
-        width: 0;
-        z-index: 1;
-        right: 40px;
-        border: medium solid white;
-        border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent white;
-      }
-      .right::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 50%;
-        width: 0;
-        z-index: 1;
-        left: 40px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-      }
-      .right::after {
-        left: -30px;
-      }
-      .content {
-        background-color: white;
-        display: flex;
-        &__image{
-            height: 215px;
-        }
-        &__item{
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            &-head{
-                margin-bottom: 20px;
-                font-size: 14px;
-                line-height: 18px;
-                color: #2c292b;
+        .timeline-box{
+            padding: 10px 50px;
+            position: relative;
+            background-color: inherit;
+            width: 100%;
+            &:before, &:after {
+                content: none;
+                position: absolute;
+                transform: translateY(-50%);
+                z-index: 1;
+                top: 50%;
+                border: 4px solid $color-white;
+            }
+            &:after{
+                width: 50px;
+                height: 50px;
+                right: -30px;
+                background-color: $color-white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
                 font-weight: bold;
-                font-family: "Helvetica";
+
             }
-            &-body{
-                width: 200px;
-                height: 107px;
-                font-size: 12px;
-                line-height: 18px;
-                color: #2c292b;
-                font-family: "Helvetica";
+            &:before {
+                height: 0;
+                position: absolute;
+                width: 0;
+                right: 40px;
+                // border: medium solid white;
+            }
+            
+            .content {
+                background-color: white;
+                display: flex;
+                max-width: 420px;
+                height: 215px;
+                width: 100%;
+                min-width: 300px;
+                &__image{
+                    height: 215px;
+                    width: 100%;
+                    max-width: 180px;
+                    min-width: 120px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &__item{
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    &-text {
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #2c292b;
+                        font-family: "Helvetica";
+                        &--title {
+                            font-weight: bold;
+                            display: block; 
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            text-overflow: ellipsis;
+                            -webkit-box-orient: vertical;
+                            overflow:hidden;
+                        }
+                        &--description {
+                            font-size: 12px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+            &--left {
+                left: 0;
+                &:before {
+                    border-width: 10px 0 10px 10px;
+                    border-color: transparent transparent transparent white;
+                }
+                .content {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            &--right {
+                left: inherit;
+                &:after {
+                    left: -30px;
+                }
+                &:before {
+                    left: 40px;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent white transparent transparent;
+                }
+                .content {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }
-    
+    @media screen and (min-width: 992px) {
+        &__timeline {
+            &:after {
+                content: ' ',
+            }
+            .timeline-box {
+                width: 50%;
+                &:after {
+                    content: attr(data-day);
+                }
+                &:before {
+                    content: ' ';
+                }
+                &--right {
+                    left: 50%;
+                    .content {
+                        margin-left: inherit;
+                        margin-right: inherit;
+                    } 
+                }
+                &--left {
+                    .content {
+                        margin-right: inherit;
+                    }
+                }
+            }
+        }
+    }
 }
